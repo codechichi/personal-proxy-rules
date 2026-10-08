@@ -4,10 +4,12 @@ DOMAIN-SUFFIX,greenhouse.io
 DOMAIN-SUFFIX,shopify.com
 # TapNow
 DOMAIN-SUFFIX,tapnow.ai
-# Folo 默认代理
+# Folo
 DOMAIN-SUFFIX,folo.is
 # 司机社
 DOMAIN-SUFFIX,xsijishe.net
 DOMAIN-SUFFIX,xsijishe.com
 # VCB-Studio
 DOMAIN-SUFFIX,vcb-s.com
+# Surge
+DOMAIN-SUFFIX,nssurge.com
