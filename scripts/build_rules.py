@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 统一构建三端（Clash / Surge / Loon）兼容的纯文本 classical 规则集：
-1. generated/ai-suite.list : TannayeJ 19 个 AI 源 + personal-ai.list
-2. generated/tiktok.list   : 可莉 TikTok 源（过滤国内字节系、杂项及非通用语法）
+1. generated/ai-suite.list : TannayeJ AI 源 + personal-ai.list
+2. generated/tiktok.list   : blackmatrix7 TikTok 源，补齐缺失的海外 TikTok CDN / Shop / Live 域名
 """
 
 import re
@@ -26,20 +26,43 @@ AI_VENDORS = [
 ]
 AI_BASE_URL = "https://raw.githubusercontent.com/TannayeJ/ai-vendor-rules/main/generated/clash/{vendor}.yaml"
 
-# 优先走 GitHub 原始仓库绕开 CF，失败时回退 kelee.one
 TIKTOK_URLS = [
-    "https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Rule/TikTok.yaml",
-    "https://kelee.one/Tool/Clash/Rule/TikTok.yaml",
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list",
 ]
 
-# TikTok 需剔除的国内字节系与误收域名（按规则值小写匹配）
-TIKTOK_EXCLUDED_VALUES = {
-    "bytedance.com",
-    "bytedance.net",
-    "bytedance.map.",
-    "pstatp.com",
-    "musemuse.cn",
-    "cocacola.co.jp",
+# 补齐 blackmatrix7 缺失的海外 TikTok CDN / Shop / Live 域名（不含国内字节系）
+TIKTOK_EXTRA_RULES = {
+    "DOMAIN-SUFFIX,bytefcdn-oversea.com",
+    "DOMAIN-SUFFIX,bytefcdn-ttpeu.com",
+    "DOMAIN-SUFFIX,byteglb.com",
+    "DOMAIN-SUFFIX,byteicdn.com",
+    "DOMAIN-SUFFIX,byteigtm.com",
+    "DOMAIN-SUFFIX,byteintl.com",
+    "DOMAIN-SUFFIX,byteintl.net",
+    "DOMAIN-SUFFIX,byteoversea.net",
+    "DOMAIN-SUFFIX,bytetcdn.com",
+    "DOMAIN-SUFFIX,sgsnssdk.com",
+    "DOMAIN-SUFFIX,tiktok-usts.net",
+    "DOMAIN-SUFFIX,tiktok.in",
+    "DOMAIN-SUFFIX,tiktokcdn-eu.com",
+    "DOMAIN-SUFFIX,tiktokcdn-eu.net",
+    "DOMAIN-SUFFIX,tiktokcdn-in.com",
+    "DOMAIN-SUFFIX,tiktokglobalshop.com",
+    "DOMAIN-SUFFIX,tiktokglobalshopv.com",
+    "DOMAIN-SUFFIX,tiktokshop.com",
+    "DOMAIN-SUFFIX,tiktokstaticb.com",
+    "DOMAIN-SUFFIX,tiktokv.eu",
+    "DOMAIN-SUFFIX,tiktokw.us",
+    "DOMAIN-SUFFIX,tlivecdn.com",
+    "DOMAIN-SUFFIX,tlivepush.com",
+    "DOMAIN-SUFFIX,ttadsmanager.com",
+    "DOMAIN-SUFFIX,ttapis.com",
+    "DOMAIN-SUFFIX,ttdns2.com",
+    "DOMAIN-SUFFIX,ttlivecdn.com",
+    "DOMAIN-SUFFIX,ttoversea.net",
+    "DOMAIN-SUFFIX,ttoverseaus.net",
+    "DOMAIN-SUFFIX,ttwstatic.com",
+    "DOMAIN-SUFFIX,tzvbfs.com",
 }
 
 
