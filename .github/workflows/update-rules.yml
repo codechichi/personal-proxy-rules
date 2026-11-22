@@ -1,4 +1,4 @@
-name: Update AI Rules
+name: Update Rules
 
 on:
   schedule:
@@ -9,7 +9,7 @@ on:
       - main
     paths:
       - "personal-ai.list"
-      - "scripts/build_ai_rules.py"
+      - "scripts/build_rules.py"
 
 permissions:
   contents: write
@@ -26,17 +26,17 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Build merged AI ruleset
-        run: python3 scripts/build_ai_rules.py
+      - name: Build merged rulesets
+        run: python3 scripts/build_rules.py
 
       - name: Commit and push if changed
         run: |
-          if git diff --quiet generated/ai-suite.list; then
+          if [ -z "$(git status --porcelain generated/)" ]; then
             echo "No rule changes detected."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add generated/ai-suite.list
-          git commit -m "chore(rules): update merged ai-suite.list"
+          git add generated/
+          git commit -m "chore(rules): update generated rulesets"
           git push
