@@ -1,0 +1,10 @@
+# tinyMediaManager / TMDB 元数据与图片
+DOMAIN-SUFFIX,themoviedb.org
+DOMAIN-SUFFIX,tmdb.org
+
+# PikPak 主站
+DOMAIN-SUFFIX,mypikpak.com
+
+# Hugging Face 官方站与权重存储
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN-SUFFIX,hf.co
