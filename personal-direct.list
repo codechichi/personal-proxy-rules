@@ -1,0 +1,34 @@
+# 自有域名
+DOMAIN-SUFFIX,chichi.fun
+DOMAIN-SUFFIX,chichi-server.fun
+
+# PikPak 直连（注：dl-*.mypikpak.com 动态正则放到 rules-map.json 按端适配）
+DOMAIN-SUFFIX,pikpak.site
+
+# Apple DNS 补充
+DOMAIN-SUFFIX,apple-dns.net
+
+# Steam 连通性检测与国区补充
+DOMAIN-SUFFIX,steamconnecttest.com
+DOMAIN-SUFFIX,test.steampowered.com
+DOMAIN-SUFFIX,wmsjsteam.com
+DOMAIN-SUFFIX,steamcontent.tnkjmec.com
+DOMAIN-SUFFIX,cmp1-hkg1.steamserver.net
+DOMAIN-SUFFIX,cmp1-lax1.steamserver.net
+DOMAIN-SUFFIX,cmp1-sgp1.steamserver.net
+DOMAIN-SUFFIX,cmp1-tyo3.steamserver.net
+DOMAIN-SUFFIX,cmp2-hkg1.steamserver.net
+DOMAIN-SUFFIX,cmp2-lax1.steamserver.net
+DOMAIN-SUFFIX,cmp2-sgp1.steamserver.net
+DOMAIN-SUFFIX,cmp2-tyo3.steamserver.net
+DOMAIN-SUFFIX,cmp3-hkg1.steamserver.net
+DOMAIN-SUFFIX,cmp3-lax1.steamserver.net
+DOMAIN-SUFFIX,cmp3-sgp1.steamserver.net
+DOMAIN-SUFFIX,cmp3-tyo3.steamserver.net
+
+# 本地模型直连（Ollama / 魔搭 / HF 镜像）
+DOMAIN-SUFFIX,ollama.com
+DOMAIN-SUFFIX,ollama.ai
+DOMAIN,dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com
+DOMAIN-SUFFIX,modelscope.cn
+DOMAIN-SUFFIX,hf-mirror.com
